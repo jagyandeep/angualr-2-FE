@@ -1,0 +1,10 @@
+<div class="form-group" >
+  <label for="cstProduct">{{productLabel}}</label>
+  <select class="form-control" required>
+    <option *ngFor="let product of response.products" [value]="product.id">{{product.name}}</option>
+  </select>
+  <label for="cstProductQty">{{productQtyLabel}}</label>
+  <select class="form-control" required>
+    <option *ngFor="let qty of quantity" [value]="qty">{{qty}}</option>
+  </select>
+</div>

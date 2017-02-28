@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+  <form>
+    <div class="form-group">
+      <label for="cstName">{{custName_label}}</label>
+      <input type="text" id="cstName" name="cstName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="cstEmail">{{custEmail_label}}</label>
+      <input type="email" id="cstEmail" #email name="cstEmail" class="form-control" required />
+      {{validEmail.msg}}
+    </div>
+
+    <div class="form-group">
+      <label for="dob">{{dob_label}}</label>
+      <input type="date" id="cstDob" name="cstDob" class="form-control" placeholder="yyyy-mm-dd"/>
+    </div>
+
+    <div class="form-group">
+      <label for="cstaddItems">{{addItems_label}}</label>
+      <span style="cursor:pointer" class="plus" (click)="addItems()">+</span>
+      <div *ngFor="let product of products">
+        <div class="form-group" id>
+          <label for="cstProduct">{{productLabel}}</label>
+          <select class="form-control" required>
+            <option *ngFor="let productDetails of response.products" [value]="productDetails.id">{{productDetails.name}}</option>
+          </select>
+          <label for="cstProductQty">{{productQtyLabel}}</label>
+          <select class="form-control" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+
+       <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </form>
+</div>
