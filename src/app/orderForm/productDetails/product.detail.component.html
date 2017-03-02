@@ -1,10 +1,18 @@
-<div class="form-group" >
-  <label for="cstProduct">{{productLabel}}</label>
-  <select class="form-control" required>
-    <option *ngFor="let product of response.products" [value]="product.id">{{product.name}}</option>
-  </select>
-  <label for="cstProductQty">{{productQtyLabel}}</label>
-  <select class="form-control" required>
-    <option *ngFor="let qty of quantity" [value]="qty">{{qty}}</option>
-  </select>
+<div [formGroup]="productForm">
+  <div>
+    <label for="cstProduct">{{productLabel}}</label>
+    <select class="form-control" required formControlName="order_product">
+      <option *ngFor="let productDetails of response.products" [value]="productDetails.id">{{productDetails.name}}</option>
+    </select>
+  </div>
+  <div>
+    <label for="cstProductQty">{{productQtyLabel}}</label>
+    <select class="form-control" required formControlName="product_qty">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
 </div>

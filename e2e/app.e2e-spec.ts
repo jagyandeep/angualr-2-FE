@@ -1,10 +1,10 @@
-import { MyAppPage } from './app.po';
+import { AngularAppPage } from './app.po';
 
-describe('my-app App', () => {
-  let page: MyAppPage;
+describe('angular-app App', () => {
+  let page: AngularAppPage;
 
   beforeEach(() => {
-    page = new MyAppPage();
+    page = new AngularAppPage();
   });
 
   it('should display message saying app works', () => {
